@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class Apiservice {
   private http = inject(HttpClient);
-  private api = "http://localhost:5000";
+  private api = "https://portfoliobackend-8g0r.onrender.com";
    
   getFeedback():Observable<any>{
     return this.http.get<any>(`${this.api}/feedbacks`);
