@@ -12,7 +12,7 @@ export class Thoughts {
    thoughts = [
     {
       img: 'img1.png',
-      quote: 'Nothing To Impossible Until You Believe It Is Impossible.'
+      quote: 'Nothing Is Impossible Until You Believe It Is Impossible.'
     },
     {
       img: 'img2.png',

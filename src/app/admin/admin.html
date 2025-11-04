@@ -1,0 +1,52 @@
+<section class="font-sans bg-[#F3F2EC] p-6 min-h-screen">
+  <div class="flex flex-row justify-between items-center">
+    <h1 class="text-3xl font-medium text-[#1E93AB]">FeedBack Dashboard</h1>
+    <div class="flex flex-row items-center">
+    <h3 class="font-bold text-white bg-[#1E93AB] p-2 shadow-lg rounded-md sm:text-base text-xs mr-2 sm:mr-4">Total FeedBack's {{records.length}}</h3>
+    <button class="text-lg sm:text-2xl text-[#1E93AB] cursor-pointer" (click)="logout()"><i class="fas fa-sign-out"></i></button>
+    </div>
+  </div>
+  <div class="flex flex-wrap gap-24 pt-6 items-center justify-center">
+  <div class="bg-white h-[500px] w-[350px] sm:w-[500px] rounded-md shadow-lg flex flex-col p-4 gap-y-4">
+  <h2 class="text-xl font-bold text-[#1E93AB]">Feedback's</h2>
+  <div class="flex-1 overflow-y-auto custom-scroll">
+    <table class="table-auto w-full">
+      <thead class="bg-[#F3F2EC] sticky top-0">
+        <tr class="text-left">
+          <th class="p-1">#</th>
+          <th class="p-1">Name</th>
+          <th class="p-1">Email</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let feedback of records; let i = index" class="text-left text-gray-600">
+          <td class="p-2">{{ i + 1 }}</td>
+          <td class="p-1">{{ feedback.name|uppercase|slice:0:10}}</td>
+          <td class="p-1">{{ feedback.email }}</td>
+          <td class="p-1"><button class="cursor-pointer" (click)="dispMsg(i)"><i class="fa-regular fa-eye text-blue-600"></i></button></td>
+          <td class="p-1"><button class="cursor-pointer" (click)="deleteMsg(feedback._id)"><i class="fa-solid fa-trash text-red-600"></i></button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+    </div>
+
+    <div class="bg-white h-[500px] w-[350px] sm:w-[500px] rounded-md shadow-lg flex flex-col p-4 gap-y-4">
+      <div class="flex flex-row justify-between">
+        <h2 class="text-xl font-bold text-[#1E93AB]">Detailed View</h2>
+        <div >
+        <button class="rounded-md font-semibold bg-blue-600 px-2 py-1 text-white cursor-pointer mr-4" (click)="clearMsg()">Clear</button>
+        <button class="rounded-md font-semibold bg-red-600 px-2 py-1 text-white cursor-pointer" (click)="deleteMsg(detail._id)">Delete</button>
+        </div>
+      </div>
+      <h4 class="font-bold text-lg">Name:</h4>
+      <p class="text-gray-600">{{detail.name}}</p>
+      <h4 class="font-bold text-lg">Email:</h4>
+      <p class="text-gray-600">{{detail.email}}</p>
+      <h4 class="font-bold text-lg">FeedBack Message:</h4>
+      <p class="h-full border p-2 rounded-md text-gray-600 overflow-y-auto custom-scroll">{{detail.feedbackmsg}}</p>
+    </div> 
+  </div>
+</section>

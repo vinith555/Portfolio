@@ -1,0 +1,14 @@
+<section class="font-sans bg-[#F3F2EC] p-6 min-h-screen flex items-center justify-center">
+    <div class="bg-white p-6 shadow-lg rounded-md w-[320px] flex flex-col gap-4">
+        <h2 class="font-bold text-2xl text-[#1E93AB]">Admin Login</h2>
+        <div>
+        <p class="font-bold text-[#1E93AB] py-1">Email :-</p>
+        <input type="text" class="border p-2 rounded-md border-gray-600 w-full" placeholder="Enter your email" [(ngModel)] = "email">
+        </div>
+        <div>
+        <p class="font-bold text-[#1E93AB] py-1">Password :-</p>
+        <input type="text" class="border p-2 rounded-md border-gray-600 w-full" placeholder="Enter your password" [(ngModel)] = "password">
+        </div>
+        <button class="cursor-pointer bg-[#1E93AB] text-white p-2 rounded-md font-bold" (click)="login()">Login</button>
+    </div>
+</section>
